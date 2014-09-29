@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>tab切换</title>
+<style type="text/css">
+     #container{width:300px;border:1px solid #e7e7e7;}
+	 ul{background-color:#e7e7e7;height:28px;padding:0px;margin:0px;}
+	 ul li{
+		 list-style:none;
+		 float:left;
+		 font-size:12px;
+		 text-align:center;
+		 width:25%;
+		 line-height:27px;
+	 }
+	 .tag{background-color:#FFF;font-weight:bold;}
+	 .hidden{display:none;}
+	 .show{display:block;}
+</style>
+<script type="text/javascript">
+    function change(li){
+		var lis=document.getElementsByTagName("li");
+		var divs=document.getElementById("container").getElementsByTagName("div");
+		for(var i=0;i<lis.length;i++){
+			if(li==lis[i]){
+				lis[i].className="tag";
+				divs[i].className="show";
+				}else{
+					lis[i].className="";
+					divs[i].className="hidden";
+					}
+			}
+		}
+	
+</script>
+</head>
+
+<body>
+<div id="container">
+  <ul>
+      <li class="tag" onmouseover="change(this)">para1</li>
+      <li onmouseover="change(this)">para2</li>
+      <li onmouseover="change(this)">para3</li>
+      <li onmouseover="change(this)">para4</li>
+  </ul>
+<div><img src="4.jpg" /></div>
+<div class="hidden"><img src="9.jpg" /></div>
+<div class="hidden"><img src="18.jpg" /></div>
+<div class="hidden"><img src="23.jpg" /></div>
+</div>
+</body>
+</html>
